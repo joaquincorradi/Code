@@ -1,6 +1,6 @@
 #include <iostream>
 
-int puntaje(int g, int p, int e)
+int quePuntaje(int g, int p, int e)
 {
   return (3 * g) + e;
 }
