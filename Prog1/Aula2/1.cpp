@@ -13,7 +13,15 @@ float calcArea(float base, float altura)
 int main()
 {
   float base, altura;
+  char respuesta;
+  while (respuesta == 's')
+  {
+    while (base < 0 || altura < 0) 
+    {
+      std::cin >> base >> altura;
+    }
 
+  }
   while (base < 0 || altura < 0)
   {
     std::cin >> base >> altura;
