@@ -10,4 +10,20 @@ void ingresarArray(int array[5])
   }
 }
 
-void mostrarArray()
+void mostarArray(int array[5])
+{
+  std::cout << '\n';
+  std::cout << "El array es: ";
+  for (int i = 0; i <= 4; ++i)
+  {
+    std::cout << " " << array[i] << " ";
+  }
+  std::cout << "]";
+}
+
+int main()
+{
+  int array[5];
+  ingresarArray(array);
+  mostarArray(array);
+}
