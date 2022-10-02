@@ -10,7 +10,7 @@ void cantidadVuelos(int &vuelos)
 void ingresarNumeroVuelo(int vuelos, int numero[])
 {
   std::cout << '\n';
-  std::cout << "Ingrese el numero de lo: ";
+  std::cout << "Ingrese el numero de cada vuelo: ";
   for (int i = 0; i <= vuelos - 1; ++i)
   {
     std::cin >> numero[i];
@@ -39,7 +39,7 @@ void ingresarEstado(int vuelos, int estado[], int numero[])
 
 int calcRetrasados(int vuelos, int estado[])
 {
-  int retrasados;
+  int retrasados = 0;
   for (int i = 0; i <= vuelos - 1; ++i)
   {
     if (estado[i] == 0)
@@ -55,26 +55,37 @@ int calcPorcentaje(int vuelos, int retrasados)
   return (retrasados * 100) / vuelos;
 }
 
-int calcMayor(int vuelos, int pasajeros[])
+int calcMayor(int vuelos, int pasajeros[], int numero[])
 {
-  int mayor;
+  int guardar = 0, mayor = 0;
   for (int i = 0; i <= vuelos - 1; ++i)
   {
-    if (pasajeros[i] > mayor)
+    if (pasajeros[i] > guardar)
     {
-      mayor = pasajeros[i];
+      guardar = pasajeros[i];
+      mayor = numero[i];
     }
   }
   return mayor;
 }
 
-int calcPromedio(int vuelos, int pasjeros[])
+int calcPromedio(int vuelos, int pasajeros[])
 {
-  int promedio;
+  int promedio = 0;
   for (int i = 0; i <= vuelos - 1; ++i)
   {
-    
+    promedio += pasajeros[i];
   }
+  return promedio / vuelos;
+}
+
+void mostrarResultados(int retrasados, int porcentaje, int mayor, int promedio)
+{
+  std::cout << '\n';
+  std::cout << "La cantidad de vuelos retrasados es de " << retrasados << " que es el " << porcentaje << "% de los vuelos totales" << '\n';
+  std::cout << "El vuelo con mayor numero de pasajeros es el nro. " << mayor << '\n';
+  std::cout << "El numero promedio de pasajeros es " << promedio << '\n';
+  std::cout << '\n';
 }
 
 int main()
@@ -89,5 +100,7 @@ int main()
   ingresarEstado(vuelos, estado, numero);
   int retrasados = calcRetrasados(vuelos, estado);
   int porcentaje = calcPorcentaje(vuelos, retrasados);
-  int mayor = calcMayor(vuelos, pasajeros);
+  int mayor = calcMayor(vuelos, pasajeros, numero);
+  int promedio = calcPromedio(vuelos, pasajeros);
+  mostrarResultados(retrasados, porcentaje, mayor, promedio);
 }
