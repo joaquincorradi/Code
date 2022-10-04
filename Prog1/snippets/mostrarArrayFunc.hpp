@@ -9,4 +9,5 @@ void mostrarArray(int array[3])
     std::cout << " " << array[i] << " ";
   }
   std::cout << "]";
+  std::cout << '\n';
 }
