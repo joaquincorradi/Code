@@ -13,54 +13,48 @@ void ingresarMatriz(float matriz[3][3])
   }
 }
 
-void ingresarNumero(int &numero)
+float calcPromedio(float matriz[3][3])
+{
+  float promedio = 0;
+  for (int i = 0; i <= 2; ++i)
+  {
+    for (int j = 0; j <= 2; ++j)
+    {
+      promedio += matriz[i][j];
+    }
+  }
+  return promedio / 9;
+}
+
+void dividirMatrizPromedio(float matriz[3][3], float promedio)
+{
+  for (int i = 0; i <= 2; ++i)
+  {
+    for (int j = 0; j <= 2; ++j)
+    {
+      matriz[i][j] = matriz[i][j] / promedio;
+    }
+  }
+}
+
+void matrizAArray(float matriz[3][3], float array[9])
+{
+  int contador = 0;
+  for (int i = 0; i <= 2; ++i)
+  {
+    for (int j = 0; j <= 2; ++j)
+    {
+      array[contador] = matriz[i][j];
+      ++contador;
+    }
+  }
+}
+
+void mostrarPromedio(float promedio)
 {
   std::cout << '\n';
-  std::cout << "Ingrese un numero por el que desea dividir la matriz: ";
-  std::cin >> numero;
-}
-
-void dividirMatriz(float matriz[3][3], int numero)
-{
-  for (int i = 0; i <= 2; ++i)
-  {
-    for (int j = 0; j <= 2; ++j)
-    {
-      matriz[i][j] /= numero;
-    }
-  }
-}
-
-int contarElementosMenores(float matriz[3][3])
-{
-  int contador = 0;
-  for (int i = 0; i <= 2; ++i)
-  {
-    for (int j = 0; j <= 2; ++j)
-    {
-      if (matriz[i][j] < 1)
-      {
-        ++contador;
-      }
-    }
-  }
-  return contador;
-}
-
-void elementosMenores(float matriz[3][3], float array[])
-{
-  int contador = 0;
-  for (int i = 0; i <= 2; ++i)
-  {
-    for (int j = 0; j <= 2; ++j)
-    {
-      if (matriz[i][j] < 1)
-      {
-        array[contador] = matriz[i][j];
-        ++contador;
-      }
-    }
-  }
+  std::cout << "El promedio es " << promedio  <<'\n';
+  std::cout << '\n';
 }
 
 void mostrarMatriz(float matriz[3][3])
@@ -77,12 +71,11 @@ void mostrarMatriz(float matriz[3][3])
   }
 }
 
-void mostrarArray(float array[], int nroMenores)
+void mostrarArray(float array[9])
 {
   std::cout << '\n';
-  std::cout << "La cantidad de numeros menores a 1 es " << nroMenores <<'\n';
   std::cout << "El array resultante es: [";
-  for (int i = 0; i <= nroMenores - 1; ++i)
+  for (int i = 0; i <= 8; ++i)
   {
     std::cout << " " << array[i] << " ";
   }
@@ -94,12 +87,11 @@ int main()
 {
   float matriz[3][3];
   ingresarMatriz(matriz);
-  int numero = 0;
-  ingresarNumero(numero);
-  dividirMatriz(matriz, numero);
-  int nroMenores = contarElementosMenores(matriz);
-  float array[nroMenores];
-  elementosMenores(matriz, array);
+  float promedio = calcPromedio(matriz);
+  dividirMatrizPromedio(matriz, promedio);
+  float array[9];
+  matrizAArray(matriz, array);
+  mostrarPromedio(promedio);
   mostrarMatriz(matriz);
-  mostrarArray(array, nroMenores);
+  mostrarArray(array);
 }
