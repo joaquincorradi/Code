@@ -27,10 +27,13 @@ int main()
 void menu(int &opcion)
 {
   std::cout << '\n';
-  std::cout << " 1. Cargar Cliete" << '\n';
-  std::cout << " 2. Cargar movimiento en caja de ahorros en pesos." << '\n';
-  std::cout << " 3. Cargar movimiento en caja de ahorros en dolares." << '\n';
-  std::cout << " 4. Mostrar saldo de cliente." << '\n';
+  std::cout << "\tBIENVENIDO" << '\n';
+  std::cout << '\n';
+  std::cout << " 1. Crear nuevo cliente." << '\n';
+  std::cout << " 2. Realizar movimiento en pesos." << '\n';
+  std::cout << " 3. Realizar movimiento en dolares." << '\n';
+  std::cout << " 4. Consultar saldo de cliente." << '\n';
+  std::cout << '\n';
   std::cout << " Elija una opcion: ";
   std::cin >> opcion;
 }
@@ -51,6 +54,7 @@ void cargarMovimientoPesos(cliente datos[], int cantidadClientes)
 {
   int guardarCliente = 0, monto = 0;
   char opcion;
+  bool check = true;
   std::cout << '\n';
   std::cout << "Ingrese numero de cliente para realizar movimiento en pesos: ";
   std::cin >> guardarCliente;
@@ -58,6 +62,7 @@ void cargarMovimientoPesos(cliente datos[], int cantidadClientes)
   {
     if (guardarCliente == datos[i].nroCliente)
     {
+      check = false;
       std::cout << "Desea ingresar dinero o retirar pesos? (i/r): ";
       std::cin >> opcion;
       if (opcion == 'i')
@@ -81,12 +86,17 @@ void cargarMovimientoPesos(cliente datos[], int cantidadClientes)
       }
     }
   }
+  if (check)
+  {
+    std::cout << "Usuario inexistente." << '\n';
+  }
 }
 
 void cargarMovimientoDolares(cliente datos[], int cantidadClientes)
 {
   int guardarCliente = 0, monto = 0;
   char opcion;
+  bool check = true;
   std::cout << '\n';
   std::cout << "Ingrese numero de cliente para realizar movimiento en dolares: ";
   std::cin >> guardarCliente;
@@ -94,6 +104,7 @@ void cargarMovimientoDolares(cliente datos[], int cantidadClientes)
   {
     if (guardarCliente == datos[i].nroCliente)
     {
+      check = false;
       std::cout << "Desea ingresar dinero o retirar dolares? (i/r): ";
       std::cin >> opcion;
       if (opcion == 'i')
@@ -108,7 +119,7 @@ void cargarMovimientoDolares(cliente datos[], int cantidadClientes)
         std::cin >> monto;
         if (datos[i].saldoDolares < monto)
         {
-          std::cout << "Saldo insuficiente.";
+          std::cout << "Saldo insuficiente" << '\n';
         }
         else
         {
@@ -116,10 +127,10 @@ void cargarMovimientoDolares(cliente datos[], int cantidadClientes)
         }
       }
     }
-    else
-    {
-      std::cout << "Cliente inexistente";
-    }
+  }
+  if (check)
+  {
+    std::cout << "Usuario inexistente." << '\n';
   }
 }
 
@@ -138,7 +149,7 @@ void mostrarSaldoCliente(cliente datos[], int cantidadClientes)
     {
       if (datos[i].nroCliente == guardarCliente)
       {
-        std::cout << "El saldo de la cuenta nro. " << guardarCliente << " es $" << datos[i].saldoPesos << '\n';
+        std::cout << "El saldo de la caja de ahorro nro " << datos[i].nroCajaPesos << " es $" << datos[i].saldoPesos << '\n';
       }
     }
   }
@@ -150,7 +161,7 @@ void mostrarSaldoCliente(cliente datos[], int cantidadClientes)
     {
       if (datos[i].nroCliente == guardarCliente)
       {
-        std::cout << "El saldo de la cuenta nro. " << guardarCliente << " es $" << datos[i].saldoDolares;
+        std::cout << "El saldo de la caja de ahorro nro " << datos[i].nroCajaDolares << " es $" << datos[i].saldoDolares << '\n';
       }
     }
   }
@@ -176,10 +187,9 @@ void iniciarOpciones(cliente datos[], int opcion, int cantidadClientes)
     case 4: mostrarSaldoCliente(datos, cantidadClientes);
       break;
   
-    default: std::cout << "Opcion invalida.";
+    default: std::cout << "Opcion invalida." << '\n';
       break;
     }
-    std::cout << "Desea realizar otra operacion? (s/n): ";
+    std::cout << "Desea regresar al menu principal? (s/n): ";
     std::cin >> eleccion;
   }
-}
