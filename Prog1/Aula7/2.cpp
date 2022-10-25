@@ -12,8 +12,8 @@ int main()
 void contar(std::ifstream &datos)
 {
   int contador = 0;
-  std::string a;
-  while (datos >> a)
+  std::string a[100];
+  while (datos >> a[contador])
   {
     ++contador;
   }
