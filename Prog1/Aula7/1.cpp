@@ -9,7 +9,7 @@ int main()
   std::ifstream datos1("datos.txt");
   std::ofstream datos2("datos2.txt");
 
-  //imprimirDatos(datos1);
+  imprimirDatos(datos1);
   reordenarDatos(datos1, datos2);
 }
 
@@ -22,6 +22,8 @@ void imprimirDatos(std::ifstream &datos1)
     std::cout << a << " ";
   }
   std::cout << "]" << '\n';
+  datos1.clear();
+  datos1.seekg(0);
 }
 
 void reordenarDatos(std::ifstream &datos1, std::ofstream &datos2)
