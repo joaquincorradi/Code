@@ -1,26 +1,21 @@
 #include <iostream>
 
-void cargarMatriz(int matriz[3][3])
-{
+void cargarMatriz(int matriz[3][3]) {
   std::cout << '\n';
-  for (int i = 0; i <= 2; ++i)
-  {
+  std::cout << '\n';
+  for (int i = 0; i <= 2; ++i) {
     std::cout << "Ingrese fila " << i + 1 << ": ";
-    for (int j = 0; j <= 2; ++j)
-    {
+    for (int j = 0; j <= 2; ++j) {
       std::cin >> matriz[i][j];
     }
   }
   std::cout << '\n';
 }
 
-void sumarF(int fls[3], int matriz[3][3])
-{
+void sumarF(int fls[3], int matriz[3][3]) {
   int suma = 0;
-  for (int i = 0; i <= 2; ++i)
-  {
-    for (int j = 0; j <= 2; ++j)
-    {
+  for (int i = 0; i <= 2; ++i) {
+    for (int j = 0; j <= 2; ++j) {
       suma += matriz[i][j];
     }
     fls[i] = suma;
@@ -28,13 +23,10 @@ void sumarF(int fls[3], int matriz[3][3])
   }
 }
 
-void sumarC(int cls[3], int matriz[3][3])
-{
+void sumarC(int cls[3], int matriz[3][3]) {
   int suma = 0;
-  for (int i = 0; i <= 2; ++i)
-  {
-    for (int j = 0; j <= 2; ++j)
-    {
+  for (int i = 0; i <= 2; ++i) {
+    for (int j = 0; j <= 2; ++j) {
       suma += matriz[j][i];
     }
     cls[i] = suma;
@@ -42,37 +34,29 @@ void sumarC(int cls[3], int matriz[3][3])
   }
 }
 
-int calcPromedio(int array[3])
-{
+int calcPromedio(int array[3]) {
   int promedio = 0;
-  for (int i = 0; i <= 2; ++i)
-  {
+  for (int i = 0; i <= 2; ++i) {
     promedio += array[i];
   }
   promedio /= 3;
   return promedio;
 }
 
-int checkPromedio(int promedio, int array[3])
-{
+int checkPromedio(int promedio, int array[3]) {
   int contador = 0;
-  for (int i = 0; i <= 2; ++i)
-  {
-    if (array[i] < promedio)
-    {
+  for (int i = 0; i <= 2; ++i) {
+    if (array[i] < promedio) {
       ++contador;
     }
   }
   return contador;
 }
 
-void mostrarMatriz(int matriz[3][3])
-{
+void mostrarMatriz(int matriz[3][3]) {
   std::cout << "La matriz ingresada es: " << '\n';
-  for (int i = 0; i <= 2; ++i)
-  {
-    for (int j = 0; j <= 2; ++j)
-    {
+  for (int i = 0; i <= 2; ++i) {
+    for (int j = 0; j <= 2; ++j) {
       std::cout << " " << matriz[i][j] << " ";
     }
     std::cout << '\n';
@@ -80,24 +64,21 @@ void mostrarMatriz(int matriz[3][3])
   std::cout << '\n';
 }
 
-void mostrarArray(int array[3])
-{
+void mostrarArray(int array[3]) {
   std::cout << '\n';
   std::cout << "El array es: [ ";
-  for (int i = 0; i <= 2; ++i)
-  {
+  for (int i = 0; i <= 2; ++i) {
     std::cout << " " << array[i] << " ";
   }
   std::cout << " ]" << '\n';
 }
 
-void mostrarResultados(int promedio, int menores)
-{
-  std::cout << "El promedio es: " << promedio << ", y hay " << menores << " elementos menores a este." << '\n';
+void mostrarResultados(int promedio, int menores) {
+  std::cout << "El promedio es: " << promedio << ", y hay " << menores
+            << " elementos menores a este." << '\n';
 }
 
-int main()
-{
+int main() {
   int matriz[3][3], sumaFilas[3], sumaColumnas[3];
   cargarMatriz(matriz);
   sumarF(sumaFilas, matriz);
