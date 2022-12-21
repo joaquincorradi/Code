@@ -2,27 +2,85 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[nil, spanish]{babel}
-\usepackage{graphicx}
+\usepackage{graphicx, tikz, pgfplots}
 \usepackage{amsmath, amsthm, amssymb}
+\usetikzlibrary{positioning}
 \newtheorem*{theorem}{Teorema}
 \newtheorem*{definition}{Definición}
 
-\title{Teoremas Análisis Matemático I}
+\title{Análisis Matemático I}
 \date{}
 \author{}
 
 \begin{document}
   \maketitle
   \section*{Límites:} 
-    \begin{definition}
-     \[
-        \lim_{x\to c}f(x)=L\iff\forall\epsilon>0 \ \exists\ \delta>0\ :0<|x-c|<\delta\Longrightarrow|f(x)-L| 
+    \begin{definition}[límite formal]
+      \[
+        \lim_{x\to c}f(x)=L\iff\forall\epsilon>0 \ \exists\ \delta>0\ :0<|x-c|<\delta\Longrightarrow
+        |f(x)-L| 
       \]
     \end{definition}
+    \begin{definition}[límite intuitivo]
+      Decir que $\lim_{x\to c}f(x)=L$ significa  que cuando $x$ está cerca pero diferente de $c$,
+      entonces $f(x)$ está cerca de $L$.
+    \end{definition}
+    \begin{theorem}[unicidad del límite]
+      Si el límite de una función existe, entonces es único.
+    \end{theorem}
+    \begin{proof}
+      Supongamos que $\lim_{x\to c}f(x)=L$ y  $\lim_{x\to c}f(x)=L'$ siendo $L$ y $L'$
+    \end{proof}
     \begin{theorem}[del emparedado]
-        Sean $f$, $g$ y $h$ funciones que satisfacen $f(x)\leqslant g(x)\leqslant h(x)\forall x$ 
-      \end{theorem}
-      \begin{proof}
-        Sea $\epsilon>0$. Elegimos $\delta_1$ tal que
-      \end{proof}
+      Sean $f$, $g$ y $h$ funciones que satisfacen $f(x)\leqslant g(x)\leqslant h(x)\forall x$
+      cercano a $c$, excepto posiblemente $c$. Si $\lim_{x\to c}f(x)=\lim_{x\to c}h(x)=L$, entonces
+      $\lim_{x\to c}g(x)=L$.
+    \end{theorem}
+    \begin{proof}
+      Sea $\epsilon>0$. Elegimos $\delta_1$ tal que
+      \[
+        0<|x-c|<\delta_1\Longrightarrow L-\epsilon<f(x)<L+\epsilon
+      \]
+      y $\delta_2$ tal que
+      \[
+        0<|x-c|<\delta_2\Longrightarrow L-\epsilon<h(x)<L+\epsilon
+      \]
+      Elegimos $\delta_3$ de modo que
+      \[
+        0<|x-c|<\delta_3\Longrightarrow f(x)\leqslant g(x)\leqslant h(x)
+      \]
+      Sea $\delta=$mín\{$\delta_1,\delta_2,\delta_3$\}. Entonces
+      \[
+        0<|x-c|<\delta\Longrightarrow L-\epsilon<f(x)\leqslant g(x)\leqslant h(x)<L+\epsilon
+      \]
+      Concluímos que $\lim_{x\to c}g(x)=L$
+    \end{proof}
+    \begin{definition}[límite infinito]
+      Decimos que $\lim_{x\to c^+f(x)=\infty}$, si para cada número positivo $M$ corresponde una
+      $\delta>0$ tal que
+      \[
+        0<x-c<\delta\Longrightarrow f(x)>M
+      \]
+    \end{definition}
+    \newpage
+
+  \section*{Continuidad:}
+  \begin{definition}[continuidad en un punto]
+      Sea $f$ definida en un intervalo abierto que contiene a $c$. Decimos que $f$ es 
+      continua en $c$ si
+      \[
+        \lim_{x\to c}f(x)=f(c)
+      \]
+    \end{definition}
+    \begin{theorem}[Bolzano]
+      Sea $f$ una función continua y definida en $[a,b]$. Si se cumple que $f(a)<0<f(b)$ o 
+      $f(b)<0<f(a)$, entonces existe al menos un punto $c\in(a,b)$ tal que $f(c)=0$.
+    \end{theorem}
+    \begin{theorem}[valor intermedio]
+      Sea $f$ una función continua y definida en $[a,b]$ y $k\in(a,b)$ tal que $f(a)<k<f(b)$,
+      entonces existe $c\in(a,b)$ tal que $f(c)=k$.
+    \end{theorem}
+    
+    
+    
 \end{document}
