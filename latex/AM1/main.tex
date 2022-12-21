@@ -55,17 +55,10 @@
       \]
       Concluímos que $\lim_{x\to c}g(x)=L$
     \end{proof}
-    \begin{definition}[límite infinito]
-      Decimos que $\lim_{x\to c^+f(x)=\infty}$, si para cada número positivo $M$ corresponde una
-      $\delta>0$ tal que
-      \[
-        0<x-c<\delta\Longrightarrow f(x)>M
-      \]
-    \end{definition}
     \newpage
 
   \section*{Continuidad:}
-  \begin{definition}[continuidad en un punto]
+    \begin{definition}[continuidad en un punto]
       Sea $f$ definida en un intervalo abierto que contiene a $c$. Decimos que $f$ es 
       continua en $c$ si
       \[
@@ -76,11 +69,21 @@
       Sea $f$ una función continua y definida en $[a,b]$. Si se cumple que $f(a)<0<f(b)$ o 
       $f(b)<0<f(a)$, entonces existe al menos un punto $c\in(a,b)$ tal que $f(c)=0$.
     \end{theorem}
+    \begin{proof}
+      Sea $f$ una función continua y definida en $[a,b]$ y $f(a)<0<f(b)$. Sea $C_+$ un
+      conjunto tal que
+      \[
+        C_+=\{x\in[a,b]/f(x)\geqslant0\}
+      \]
+      Sea $c\in[a,b]$ el supremo del conjuto $C_+$, entonces $\exists[c-\delta,c+\delta]=
+      signo\ de\ f(c)$ (por teorema de la conservación del signo). Si suponemos que $f(c)<0$
+    \end{proof}
+    
     \begin{theorem}[valor intermedio]
       Sea $f$ una función continua y definida en $[a,b]$ y $k\in(a,b)$ tal que $f(a)<k<f(b)$,
       entonces existe $c\in(a,b)$ tal que $f(c)=k$.
     \end{theorem}
-    
-    
+    \begin{theorem}[máximos y mínimos]
+    \end{theorem}
     
 \end{document}
