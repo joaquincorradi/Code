@@ -16,10 +16,10 @@
   \maketitle
   \section*{Límites:} 
     \begin{definition}[límite formal]
-      \[
+      \begin{equation*}
         \lim_{x\to c}f(x)=L\iff\forall\epsilon>0 \ \exists\ \delta>0\ :0<|x-c|<\delta\Longrightarrow
         |f(x)-L| 
-      \]
+      \end{equation*}
     \end{definition}
     \begin{definition}[límite intuitivo]
       Decir que $\lim_{x\to c}f(x)=L$ significa  que cuando $x$ está cerca pero diferente de $c$,
@@ -28,9 +28,6 @@
     \begin{theorem}[unicidad del límite]
       Si el límite de una función existe, entonces es único.
     \end{theorem}
-    \begin{proof}
-      Supongamos que $\lim_{x\to c}f(x)=L$ y  $\lim_{x\to c}f(x)=L'$ siendo $L$ y $L'$
-    \end{proof}
     \begin{theorem}[del emparedado]
       Sean $f$, $g$ y $h$ funciones que satisfacen $f(x)\leqslant g(x)\leqslant h(x)\forall x$
       cercano a $c$, excepto posiblemente $c$. Si $\lim_{x\to c}f(x)=\lim_{x\to c}h(x)=L$, entonces
@@ -38,21 +35,21 @@
     \end{theorem}
     \begin{proof}
       Sea $\epsilon>0$. Elegimos $\delta_1$ tal que
-      \[
+      \begin{equation*}
         0<|x-c|<\delta_1\Longrightarrow L-\epsilon<f(x)<L+\epsilon
-      \]
+      \end{equation*}
       y $\delta_2$ tal que
-      \[
+      \begin{equation*}
         0<|x-c|<\delta_2\Longrightarrow L-\epsilon<h(x)<L+\epsilon
-      \]
+      \end{equation*}
       Elegimos $\delta_3$ de modo que
-      \[
+      \begin{equation*}
         0<|x-c|<\delta_3\Longrightarrow f(x)\leqslant g(x)\leqslant h(x)
-      \]
+      \end{equation*}
       Sea $\delta=$mín\{$\delta_1,\delta_2,\delta_3$\}. Entonces
-      \[
+      \begin{equation*}
         0<|x-c|<\delta\Longrightarrow L-\epsilon<f(x)\leqslant g(x)\leqslant h(x)<L+\epsilon
-      \]
+      \end{equation*}
       Concluímos que $\lim_{x\to c}g(x)=L$
     \end{proof}
     \newpage
@@ -61,29 +58,72 @@
     \begin{definition}[continuidad en un punto]
       Sea $f$ definida en un intervalo abierto que contiene a $c$. Decimos que $f$ es 
       continua en $c$ si
-      \[
+      \begin{equation*}
         \lim_{x\to c}f(x)=f(c)
-      \]
+      \end{equation*}
     \end{definition}
     \begin{theorem}[Bolzano]
       Sea $f$ una función continua y definida en $[a,b]$. Si se cumple que $f(a)<0<f(b)$ o 
-      $f(b)<0<f(a)$, entonces existe al menos un punto $c\in(a,b)$ tal que $f(c)=0$.
+      $f(b)<0<f(a)$, entonces existe un punto $c\in(a,b)$ tal que $f(c)=0$.
     \end{theorem}
     \begin{proof}
       Sea $f$ una función continua y definida en $[a,b]$ y $f(a)<0<f(b)$. Sea $C_+$ un
       conjunto tal que
-      \[
+      \begin{equation*}
         C_+=\{x\in[a,b]/f(x)\geqslant0\}
-      \]
+      \end{equation*}
       Sea $c\in[a,b]$ el supremo del conjuto $C_+$, entonces $\exists[c-\delta,c+\delta]=
       signo\ de\ f(c)$ (por teorema de la conservación del signo). Si suponemos que $f(c)<0$
+      $c$ deja de ser una mínima cota superior. Si suponemos que $f(c)>0$ $c$ nuevamente deja
+      de ser mínima cota superior. Entonces la única opción posible es que $f(c)=0$.
     \end{proof}
     
     \begin{theorem}[valor intermedio]
       Sea $f$ una función continua y definida en $[a,b]$ y $k\in(a,b)$ tal que $f(a)<k<f(b)$,
       entonces existe $c\in(a,b)$ tal que $f(c)=k$.
     \end{theorem}
-    \begin{theorem}[máximos y mínimos]
+    \begin{proof}
+      Sea $f$ una función continua en $[a,b]$ y $k\in(a,b)$ tal que $f(a)<k<f(b)$. Sea
+      $g(x)=f(x)-k$ entonces
+      \begin{align*}
+        g(a)&=f(a)-k\Longrightarrow g(a)<0\\
+        g(b)&=f(b)-k\Longrightarrow g(b)>0
+      \end{align*}
+      Es decir que $g(a)<0<g(b)$ y por teorema de Bolzano existe un punto 
+      $c\in(a,b)$ tal que $g(c)=0$, entonces
+      \begin{align*}
+        g(c)&=0\\
+        g(c)&=f(c)-k\\
+        0&=f(c)-k\\
+        f(c)&=k
+      \end{align*}
+    \end{proof}
+    \begin{theorem}[Weierstrass | máximos y mínimos]
+      Sea $f$ una función continua y definida en $[a,b]$ entonces $\exists\ x_1,x_2\in[a,b]$ 
+      tal que $f(x_1)\leqslant f(x)\leqslant f(x_2)\forall x\in[a,b]$.
+    \end{theorem}
+    \newpage
+
+  \section*{Derivada:}
+    \begin{definition}[derivada]
+      La derivada de un función $f$ es otra función $f'$ cuyo valor en cualquier
+      $x$ es
+      \begin{equation*}
+        f'(x)=\lim_{x\to h}\frac{f(x+h)-f(x)}{h}=\frac{dy}{dx}
+      \end{equation*}
+    \end{definition}
+    \begin{theorem}[diferenciabilidad implica continuidad]
+      Si $f'(c)$ existe, entonces $f$ es continua en $c$.
+    \end{theorem}
+    \begin{theorem}[Fermat]
+    \end{theorem}
+    \begin{theorem}[Rolle]
+    \end{theorem}
+    \begin{theorem}[Lagrange]
+    \end{theorem}
+    \begin{theorem}[valor medio]
+    \end{theorem}
+    \begin{theorem}[L'Hopital]
     \end{theorem}
     
 \end{document}
