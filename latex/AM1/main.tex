@@ -1,20 +1,19 @@
-\documentclass{article}
+\documentclass{report}
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage[nil, spanish]{babel}
-\usepackage{graphicx, tikz, pgfplots}
-\usepackage{amsmath, amsthm, amssymb}
-\usetikzlibrary{positioning}
+\usepackage{amsmath, amsthm, amssymb, graphicx, thmtools, hyperref}
+\renewcommand*\listtheoremname{Contenido}
 \newtheorem*{theorem}{Teorema}
 \newtheorem*{definition}{Definición}
 
-\title{Análisis Matemático I}
+\title{Teoremas y demostraciones}
 \date{}
-\author{}
+\author{Análisis matemático I}
 
 \begin{document}
   \maketitle
-  \section*{Límites:} 
+  \listoftheorems
+  \chapter*{Límites:} 
     \begin{definition}[límite formal]
       \begin{equation*}
         \lim_{x\to c}f(x)=L\iff\forall\epsilon>0 \ \exists\ \delta>0\ :0<|x-c|<\delta\Longrightarrow
@@ -52,9 +51,8 @@
       \end{equation*}
       Concluímos que $\lim_{x\to c}g(x)=L$
     \end{proof}
-    \newpage
 
-  \section*{Continuidad:}
+  \chapter*{Continuidad:}
     \begin{definition}[continuidad en un punto]
       Sea $f$ definida en un intervalo abierto que contiene a $c$. Decimos que $f$ es 
       continua en $c$ si
@@ -77,7 +75,6 @@
       $c$ deja de ser una mínima cota superior. Si suponemos que $f(c)>0$ $c$ nuevamente deja
       de ser mínima cota superior. Entonces la única opción posible es que $f(c)=0$.
     \end{proof}
-    
     \begin{theorem}[valor intermedio]
       Sea $f$ una función continua y definida en $[a,b]$ y $k\in(a,b)$ tal que $f(a)<k<f(b)$,
       entonces existe $c\in(a,b)$ tal que $f(c)=k$.
@@ -102,22 +99,62 @@
       Sea $f$ una función continua y definida en $[a,b]$ entonces $\exists\ x_1,x_2\in[a,b]$ 
       tal que $f(x_1)\leqslant f(x)\leqslant f(x_2)\forall x\in[a,b]$.
     \end{theorem}
-    \newpage
 
-  \section*{Derivada:}
+  \chapter*{Derivada:}
     \begin{definition}[derivada]
       La derivada de un función $f$ es otra función $f'$ cuyo valor en cualquier
       $x$ es
       \begin{equation*}
-        f'(x)=\lim_{x\to h}\frac{f(x+h)-f(x)}{h}=\frac{dy}{dx}
+        f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}=\frac{dy}{dx}
       \end{equation*}
     \end{definition}
     \begin{theorem}[diferenciabilidad implica continuidad]
       Si $f'(c)$ existe, entonces $f$ es continua en $c$.
     \end{theorem}
+    \begin{proof}
+      Sea $f$ una función tal que
+      \begin{align*}
+        f(x)&=f(x)\\
+        f(x)&=f(c)+\frac{f(x)-f(c)}{x-c}\cdot(x-c)
+      \end{align*}
+      Por lo tanto,
+      \begin{align*}
+        \lim_{x\to c}f(x)&=\lim_{x\to c}\left[f(c)+\frac{f(x)-f(c)}{x-c}\cdot(x-c)\right]\\
+                         &=\lim_{x\to c}f(c)+\lim_{x\to c}\frac{f(x)+f(c)}{x-c}\cdot
+                         \lim_{x\to c}x-c\\
+                         &=f(c)+f'(c)\cdot0\\
+        \lim_{x\to c}f(x)&=f(c)
+      \end{align*}
+    \end{proof}
     \begin{theorem}[Fermat]
+      Sea $f$ una función definida en $(a,b)$, si alcanza un máximo o mínimo local en $c$, y 
+      si $f'(c)$ existe en el punto $c$, entonces $f'(c)=0$.
     \end{theorem}
+    \begin{proof}
+      Sea $f$ una función definida en $(a,b)$ y $c$ un máximo local, entonces
+      \begin{equation*}
+        \exists\ \epsilon>0/f(x)\leqslant f(x)\ \forall x\in(a,b)\cap(c-\epsilon,c+\epsilon)
+      \end{equation*}
+      Supongamos que $\exists f'(c)$, entonces
+      \begin{equation*}
+        f'(c)=\lim_{h\to 0^+}\frac{f(c+h)-f(c)}{h}=\lim_{h\to 0^-}\frac{f(c+h)-f(c)}{h}
+      \end{equation*}
+      siendo
+      \begin{equation*}
+        f'(c)=\frac{f(c+h)-f(c)}{h}\leqslant0\text{ para }\lim_{h\to0^+}f(c)
+      \end{equation*}
+      y
+      \begin{equation*}
+        f'(c)=\frac{f(c+h)-f(c)}{h}\geqslant0\text{ para }\lim_{h\to0^-}f(c)
+      \end{equation*}
+      entonces,
+      \begin{equation*}
+        f'(c)=0
+      \end{equation*}
+    \end{proof}
     \begin{theorem}[Rolle]
+      Sea $f$ una función continua en $[a,b]$ y derivable en $(a,b)$. Si $f(a)=f(b)$,
+      entonces existe un punto $c\in(a,b)$ tal que $f'(c)=0$.
     \end{theorem}
     \begin{theorem}[Lagrange]
     \end{theorem}
@@ -125,5 +162,4 @@
     \end{theorem}
     \begin{theorem}[L'Hopital]
     \end{theorem}
-    
 \end{document}
