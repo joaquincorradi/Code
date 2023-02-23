@@ -17,7 +17,7 @@
     \begin{definition}[límite formal]
       \begin{equation*}
         \lim_{x\to c}f(x)=L\iff\forall\epsilon>0 \ \exists\ \delta>0\ :0<|x-c|<\delta\Longrightarrow
-        |f(x)-L| 
+        |f(x)-L|<\epsilon 
       \end{equation*}
     \end{definition}
     \begin{definition}[límite intuitivo]
@@ -131,10 +131,7 @@
       si $f'(c)$ existe en el punto $c$, entonces $f'(c)=0$.
     \end{theorem}
     \begin{proof}
-      Sea $f$ una función definida en $(a,b)$ y $c$ un máximo local, entonces
-      \begin{equation*}
-        \exists\ \epsilon>0/f(x)\leqslant f(x)\ \forall x\in(a,b)\cap(c-\epsilon,c+\epsilon)
-      \end{equation*}
+      Sea $f$ una función definida en $(a,b)$ y $c$ un máximo local.
       Supongamos que $\exists f'(c)$, entonces
       \begin{equation*}
         f'(c)=\lim_{h\to 0^+}\frac{f(c+h)-f(c)}{h}=\lim_{h\to 0^-}\frac{f(c+h)-f(c)}{h}
@@ -156,6 +153,8 @@
       Sea $f$ una función continua en $[a,b]$ y derivable en $(a,b)$. Si $f(a)=f(b)$,
       entonces existe un punto $c\in(a,b)$ tal que $f'(c)=0$.
     \end{theorem}
+    \begin{proof}
+    \end{proof}
     \begin{theorem}[Lagrange]
     \end{theorem}
     \begin{theorem}[valor medio]
