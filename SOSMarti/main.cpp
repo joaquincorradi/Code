@@ -10,8 +10,8 @@ struct persona {
 
 void menu(int opcion);
 void guardarDatos();
-void leerDatos();
-int mediaIngresos();
+void leerDatos(persona datos[10]);
+void mediaIngresos(persona datos[10]);
 void generoPorRegion();
 
 int main() { guardarDatos(); }
@@ -57,4 +57,14 @@ void leerDatos(persona datos[10]) {
     datosCensado >> datos[i].ingresos;
     datosCensado >> datos[i].region;
   }
+}
+
+void mediaIngresos(persona datos[10]) {
+  int suma = 0;
+  int resultado = 0;
+  for (int i = 0; i < 10; ++i) {
+    suma += datos[i].ingresos;
+  }
+  resultado = suma / 10;
+  std::cout << "El ingreso promedio es " << resultado << '\n';
 }
