@@ -8,13 +8,20 @@ struct persona {
   int region;
 };
 
-void menu();
+void menu(int opcion);
 void guardarDatos();
 void leerDatos();
 int mediaIngresos();
 void generoPorRegion();
 
 int main() { guardarDatos(); }
+
+void menu(int opcion) {
+  std::cout << "Elija un opcion\n";
+  std::cout << "1 ...\n";
+  std::cout << "2 ...\n";
+  std::cin >> opcion;
+}
 
 void guardarDatos() {
   std::ofstream datosCensado("datos.txt");
@@ -42,4 +49,12 @@ void guardarDatos() {
   datosCensado.close();
 }
 
-void leerDatos(persona datos[10]) {}
+void leerDatos(persona datos[10]) {
+  std::ifstream datosCensado("datos.txt");
+  for (int i = 0; i < 10; ++i) {
+    datosCensado >> datos[i].edad;
+    datosCensado >> datos[i].genero;
+    datosCensado >> datos[i].ingresos;
+    datosCensado >> datos[i].region;
+  }
+}
