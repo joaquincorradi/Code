@@ -8,23 +8,23 @@ struct persona {
   int region;
 };
 
-void menu(int opcion);
+void menu(int &opcion);
 void guardarDatos();
 void leerDatos(persona datos[10]);
 void mediaIngresos(persona datos[10]);
 void generoPorRegion(persona datos[10]);
 void inicializarMenu();
 
-int main() {
-  persona datos[10];
-  leerDatos(datos);
-  generoPorRegion(datos);
-}
+int main() { inicializarMenu(); }
 
-void menu(int opcion) {
+void menu(int &opcion) {
   std::cout << "Elija un opcion\n";
   std::cout << "1 ...\n";
   std::cout << "2 ...\n";
+  std::cout << "3 ...\n";
+  std::cout << "4 ...\n";
+  std::cout << "5 ...\n";
+  std::cout << "6 Salir\n";
   std::cin >> opcion;
 }
 
@@ -95,5 +95,33 @@ void generoPorRegion(persona datos[10]) {
       std::cout << matrizRegion[k][l] << '\t';
     }
     std::cout << '\n';
+  }
+}
+
+void inicializarMenu() {
+  persona datos[10];
+  int opcion = 1;
+  char seleccionUsuario;
+  while (seleccionUsuario == 's' || seleccionUsuario == 'S') {
+    menu(opcion);
+    switch (opcion) {
+    case 1:
+      guardarDatos();
+      break;
+    case 2:
+      leerDatos(datos);
+      break;
+    case 3:
+      mediaIngresos(datos);
+      break;
+    case 4:
+      generoPorRegion(datos);
+      break;
+    case 5:
+      break;
+    default:
+      std::cout << "Opcion invalida\n";
+      break;
+    }
   }
 }
