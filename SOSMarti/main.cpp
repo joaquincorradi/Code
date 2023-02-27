@@ -12,9 +12,14 @@ void menu(int opcion);
 void guardarDatos();
 void leerDatos(persona datos[10]);
 void mediaIngresos(persona datos[10]);
-void generoPorRegion();
+void generoPorRegion(persona datos[10]);
+void inicializarMenu();
 
-int main() { guardarDatos(); }
+int main() {
+  persona datos[10];
+  leerDatos(datos);
+  generoPorRegion(datos);
+}
 
 void menu(int opcion) {
   std::cout << "Elija un opcion\n";
@@ -67,4 +72,28 @@ void mediaIngresos(persona datos[10]) {
   }
   resultado = suma / 10;
   std::cout << "El ingreso promedio es " << resultado << '\n';
+}
+
+void generoPorRegion(persona datos[10]) {
+  int matrizRegion[3][2] = {0, 0, 0, 0, 0, 0};
+  int numeroGenero[10];
+  for (int i = 0; i < 10; ++i) {
+    if (datos[i].genero == 'm') {
+      numeroGenero[i] = 0;
+    } else {
+      numeroGenero[i] = 1;
+    }
+  }
+  for (int j = 0; j < 10; ++j) {
+    ++matrizRegion[datos[j].region - 1][numeroGenero[j]];
+  }
+  std::cout << "\tM\tF\n";
+  std::cout << "\t_\t_\n";
+  for (int k = 0; k < 3; ++k) {
+    std::cout << k + 1 << "|" << '\t';
+    for (int l = 0; l < 2; ++l) {
+      std::cout << matrizRegion[k][l] << '\t';
+    }
+    std::cout << '\n';
+  }
 }
