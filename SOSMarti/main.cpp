@@ -23,8 +23,7 @@ void menu(int &opcion) {
   std::cout << "2 ...\n";
   std::cout << "3 ...\n";
   std::cout << "4 ...\n";
-  std::cout << "5 ...\n";
-  std::cout << "6 Salir\n";
+  std::cout << "5 Salir\n";
   std::cin >> opcion;
 }
 
@@ -101,7 +100,8 @@ void generoPorRegion(persona datos[10]) {
 void inicializarMenu() {
   persona datos[10];
   int opcion = 1;
-  char seleccionUsuario;
+  char seleccionUsuario = 's';
+  bool opcionSalir = false;
   while (seleccionUsuario == 's' || seleccionUsuario == 'S') {
     menu(opcion);
     switch (opcion) {
@@ -118,10 +118,17 @@ void inicializarMenu() {
       generoPorRegion(datos);
       break;
     case 5:
+      opcionSalir = true;
       break;
     default:
       std::cout << "Opcion invalida\n";
       break;
+    }
+    if (!opcionSalir) {
+      std::cout << "¿Desea volver al menu principal? [S/n]: ";
+      std::cin >> seleccionUsuario;
+    } else {
+      seleccionUsuario = 'n';
     }
   }
 }
