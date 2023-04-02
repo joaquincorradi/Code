@@ -1,0 +1,88 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage[nil, spanish]{babel}
+\usepackage{amsmath, amsthm, amssymb, graphicx, hyperref}
+
+\title{Lista de fórmulas}
+\date{}
+\author{Física II}
+
+\begin{document}
+  \maketitle
+  \setcounter{tocdepth}{5}
+  % \setcounter{secnumdepth}{5}
+  \tableofcontents
+  \addcontentsline{toc}{section}{Campo eléctrico}
+  \section*{Campo eléctrico}
+    \addcontentsline{toc}{subsection}{Ley de Coulomb}
+    \subsection*{Ley de Coulomb}
+      La ley de Coulomb establece que la fuerza entre dos cargas eléctricas es directamente 
+      proporcional al producto de sus magnitudes y inversamente proporcional al cuadrado de 
+      la distancia entre ellas. Esta ley describe cómo se atraen o se repelen las cargas eléctricas.
+      \begin{equation*}
+        F_{12}=k_e\frac{|q_1||q_2|}{r^2}[N]
+      \end{equation*}
+    \addcontentsline{toc}{subsection}{Constante de Coulomb}
+    \subsection*{Constante de Coulomb}
+      \begin{equation*}
+        k_e=8,9876\times10^9[N]=\frac{1}{4\pi\epsilon_0}
+      \end{equation*}
+    \addcontentsline{toc}{subsection}{Permitividad del vacío}
+    \subsection*{Permitividad del vacío}
+      \begin{equation*}
+        \epsilon_0=8,8542\times10^{-12}\left[\frac{C^2}{NM^2}\right]
+      \end{equation*}
+    \addcontentsline{toc}{subsection}{Definición de campo eléctrico}
+    \subsection*{Definición de campo eléctrico}
+      El campo eléctrico es una propiedad del espacio que rodea una carga eléctrica $q$ y puede ejercer una 
+      fuerza eléctrica sobre otra carga de prueba $q_0$ cercana. Se describe mediante vectores que indican la 
+      magnitud y dirección de la fuerza eléctrica experimentada por una carga de prueba.
+      \begin{equation*}
+        \overrightarrow{E}=\frac{\overrightarrow{F}_e}{q_0}\left[\frac{N}{C}\right]
+      \end{equation*}
+    \addcontentsline{toc}{subsection}{Fuerza sobre una partícula con carga colocada en un campo eléctrico}
+    \subsection*{Fuerza ejercida sobre una partícula con carga $q$ colocada en un campo eléctrico}
+      \begin{equation*}
+        \overrightarrow{F}_e=q_0\overrightarrow{E}[N]
+      \end{equation*}
+    \addcontentsline{toc}{subsection}{Fuerzas sobre una carga de pruebas según la ley de Coulomb}
+    \subsection*{Fuerzas ejercida por $q$ sobre una carga de pruebas según la ley de Coulomb}
+      \begin{equation*}
+        \overrightarrow{F}_e=k_e\frac{qq_0}{r^2}\hat{r}[N]
+      \end{equation*}
+      Dónde $\hat{r}$ es un vector unitario con dirección de $q$ hacia $q_0$.
+    \addcontentsline{toc}{subsection}{Campo eléctrico debido a un número finito de cargas puntuales}
+    \subsection*{Campo eléctrico debido a un número finito de cargas puntuales}
+      \begin{equation*}
+        \overrightarrow{E}=k_e\sum_{i}=\frac{q_i}{r_i^2}\hat{r}_i\left[\frac{N}{C}\right]
+      \end{equation*}
+    \addcontentsline{toc}{subsection}{Campo eléctrico debido a una distribución de carga continua}
+    \subsection*{Campo eléctrico debido a una distribución de carga continua}
+      \begin{equation*}
+        \overrightarrow{E}=k_e\lim_{\Delta q_i\to0}\sum_{i}\frac{\Delta q_i}{r_i^2}\hat{r}_i
+        \left[\frac{N}{C}\right]=k_e\int\frac{dq}{r^2}\hat{r}\left[\frac{N}{C}\right]
+      \end{equation*}
+  \addcontentsline{toc}{section}{Ley de Gauss}
+  \section*{Ley de Gauss}
+    \addcontentsline{toc}{subsection}{Definición de flujo eléctrico}
+    \subsection*{Definición de flujo eléctrico}
+      El flujo eléctrico es una medida de la cantidad de líneas de campo eléctrico que atraviesan 
+      una superficie dada. Se puede visualizar como la cantidad de líneas que salen o entran en una superficie
+      \begin{equation*}
+        \Phi_E=\oint_s\overrightarrow{E}\cdot d\overrightarrow{S}=\left[\frac{NM^2}{C}\right]
+      \end{equation*}
+    \addcontentsline{toc}{subsection}{Flujo eléctrico para superficie sencilla}
+    \subsection*{Flujo eléctrico para superficie sencilla}
+      \begin{equation*}
+        \Phi_E=\overrightarrow{E}\cdot\overrightarrow{S}\left[\frac{NM^2}{C}\right]=ES\cos{\theta}\left[\frac{NM^2}{C}\right]
+      \end{equation*}
+    Siendo $\overrightarrow{S}$ el vector perpendicular a la superficie y $\theta$ el ángulo conformado por los vectores
+    $\overrightarrow{E}$ y $\overrightarrow{S}$.
+    \addcontentsline{toc}{subsection}{Ley de Gauss}
+    \subsection*{Ley de Gauss}
+      \begin{equation*}
+        \Phi_E=\frac{q_{int}}{\epsilon_0}\left[\frac{NM^2}{C}\right]
+      \end{equation*}
+  \addcontentsline{toc}{section}{Potencial eléctrico}
+  \section*{Potencial eléctrico}
+\end{document}

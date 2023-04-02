@@ -1,0 +1,15 @@
+\babel@toc {spanish}{}
+\contentsline {section}{Campo eléctrico}{1}{chapter*.1}%
+\contentsline {subsection}{Ley de Coulomb}{1}{section*.2}%
+\contentsline {subsection}{Constante de Coulomb}{1}{section*.3}%
+\contentsline {subsection}{Permitividad del vacío}{1}{section*.4}%
+\contentsline {subsection}{Definición de campo eléctrico}{2}{section*.5}%
+\contentsline {subsection}{Fuerza sobre una partícula con carga colocada en un campo eléctrico}{2}{section*.6}%
+\contentsline {subsection}{Fuerzas sobre una carga de pruebas según la ley de Coulomb}{2}{section*.7}%
+\contentsline {subsection}{Campo eléctrico debido a un número finito de cargas puntuales}{2}{section*.8}%
+\contentsline {subsection}{Campo eléctrico debido a una distribución de carga continua}{2}{section*.9}%
+\contentsline {section}{Ley de Gauss}{2}{section*.10}%
+\contentsline {subsection}{Definición de flujo eléctrico}{3}{section*.11}%
+\contentsline {subsection}{Flujo eléctrico para superficie sencilla}{3}{section*.12}%
+\contentsline {subsection}{Ley de Gauss}{3}{section*.13}%
+\contentsline {section}{Potencial eléctrico}{3}{section*.14}%
