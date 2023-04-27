@@ -17,6 +17,3 @@ int persona::getDni() { return dni; }
 std::string persona::getNombre() { return nombre; }
 std::string persona::getApellido() { return apellido; }
 std::string persona::getMail() { return mail; }
-
-void modificarDatos() {}
-void consultarDatos() {}
