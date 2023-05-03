@@ -1,7 +1,7 @@
 #include <string>
 
 class materia {
-private:
+protected:
   int codigo;
   std::string nombre;
   int nota;
