@@ -1,4 +1,5 @@
-#include "../persona/persona.h"
+#include "./persona.h"
+#include <iostream>
 
 persona::persona() {}
 persona::persona(int x, std::string y, std::string z, std::string w) {
@@ -17,3 +18,17 @@ int persona::getDni() { return dni; }
 std::string persona::getNombre() { return nombre; }
 std::string persona::getApellido() { return apellido; }
 std::string persona::getMail() { return mail; }
+
+void persona::modificarDatos() {
+  std::cin >> dni;
+  std::cin >> nombre;
+  std::cin >> apellido;
+  std::cin >> mail;
+}
+
+void persona::consultarDatos() {
+  std::cout << dni;
+  std::cout << nombre;
+  std::cout << apellido;
+  std::cout << mail;
+}

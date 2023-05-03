@@ -20,4 +20,7 @@ public:
   std::string getNombre();
   std::string getApellido();
   std::string getMail();
+
+  void modificarDatos();
+  void consultarDatos();
 };
