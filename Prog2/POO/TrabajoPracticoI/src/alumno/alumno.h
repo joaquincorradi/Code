@@ -9,6 +9,7 @@ private:
   materia Materia;
 
 public:
+  alumno() : Materia();
   void inscripcionEnMateria();
   void cargaDeNota();
 };
