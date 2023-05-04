@@ -19,15 +19,12 @@ std::string persona::getApellido() { return apellido; }
 std::string persona::getMail() { return mail; }
 
 void persona::modificarDatos() {
+  std::cout << "Ingrese su DNI: ";
   std::cin >> dni;
+  std::cout << "Ingrese su nombre: ";
   std::cin >> nombre;
+  std::cout << "Ingrese su apellido: ";
   std::cin >> apellido;
+  std::cout << "Ingrese su email: ";
   std::cin >> mail;
-}
-
-void persona::consultarDatos() {
-  std::cout << dni;
-  std::cout << nombre;
-  std::cout << apellido;
-  std::cout << mail;
 }

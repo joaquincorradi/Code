@@ -5,9 +5,10 @@
 class docente : public persona {
 private:
   std::string titulo;
-  materia Materia;
 
 public:
+  materia Materia;
   docente(int x, std::string y, std::string z, std::string w, std::string u);
-  void asignarMateria();
+  void asignarMateria(std::string x);
+  void modificarDatosDocente();
 };

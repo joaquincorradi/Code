@@ -9,4 +9,10 @@ docente::docente(int x, std::string y, std::string z, std::string w,
   titulo = u;
 }
 
-void docente::asignarMateria() {}
+void docente::asignarMateria(std::string x) { Materia.setTitular(x); }
+
+void docente::modificarDatosDocente() {
+  modificarDatos();
+  std::cout << "Ingrese su titulo: ";
+  std::cin >> titulo;
+}

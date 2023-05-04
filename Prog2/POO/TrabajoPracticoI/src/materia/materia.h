@@ -7,19 +7,22 @@ class materia {
 protected:
   int codigo;
   std::string nombre;
-  int nota;
   std::string titular;
 
 public:
-  materia(int x, std::string);
+  materia();
+  materia(int x, std::string y, std::string z);
 
   void setCodigo(int x);
   void setNombre(std::string x);
-  void setNota(int x);
+  void setTitular(std::string x);
 
   int getCodigo();
   std::string getNombre();
   int getNota();
+  std::string getTitular();
+
+  void inscripcionEnMateria(int x, std::string y);
 };
 
 #endif // !_MATERIAH_

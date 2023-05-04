@@ -24,7 +24,6 @@ public:
   std::string getMail();
 
   void modificarDatos();
-  void consultarDatos();
 };
 
 #endif // !_PERSONAH_
