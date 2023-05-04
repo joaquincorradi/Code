@@ -11,9 +11,7 @@ protected:
   std::string titular;
 
 public:
-  materia();
-
-  materia(int x, std::string y, int z, int w);
+  materia(int x, std::string);
 
   void setCodigo(int x);
   void setNombre(std::string x);

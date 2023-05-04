@@ -11,7 +11,6 @@ private:
   std::string mail;
 
 public:
-  persona();
   persona(int x, std::string y, std::string z, std::string w);
 
   void setDni(int x);

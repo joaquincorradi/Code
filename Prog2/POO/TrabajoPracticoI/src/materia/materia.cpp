@@ -1,12 +1,9 @@
 #include "./materia.h"
 #include <iostream>
 
-materia::materia() {}
-materia::materia(int x, std::string y, int z, int w) {
+materia::materia(int x, std::string y) {
   codigo = x;
   nombre = y;
-  nota = z;
-  titular = w;
 }
 
 void materia::setCodigo(int x) { codigo = x; }

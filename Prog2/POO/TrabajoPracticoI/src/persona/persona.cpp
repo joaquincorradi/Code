@@ -1,7 +1,6 @@
 #include "./persona.h"
 #include <iostream>
 
-persona::persona() {}
 persona::persona(int x, std::string y, std::string z, std::string w) {
   dni = x;
   nombre = y;

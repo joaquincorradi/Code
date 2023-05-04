@@ -9,7 +9,7 @@ private:
   materia Materia;
 
 public:
-  alumno();
+  alumno(int x, std::string y, std::string z, std::string w, std::string u,
+         int v);
   void inscripcionEnMateria();
-  void cargaDeNota();
 };
