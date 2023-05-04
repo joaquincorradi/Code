@@ -8,4 +8,6 @@ private:
   materia Materia;
 
 public:
+  docente(int x, std::string y, std::string z, );
+  void asignarMateria();
 };

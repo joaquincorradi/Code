@@ -1,3 +1,6 @@
+#ifndef _PERSONAH_
+#define _PERSONAH_
+
 #include <string>
 
 class persona {
@@ -24,3 +27,5 @@ public:
   void modificarDatos();
   void consultarDatos();
 };
+
+#endif // !_PERSONAH_

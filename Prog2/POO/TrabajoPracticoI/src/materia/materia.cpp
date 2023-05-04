@@ -2,10 +2,11 @@
 #include <iostream>
 
 materia::materia() {}
-materia::materia(int x, std::string y, int z) {
+materia::materia(int x, std::string y, int z, int w) {
   codigo = x;
   nombre = y;
   nota = z;
+  titular = w;
 }
 
 void materia::setCodigo(int x) { codigo = x; }
