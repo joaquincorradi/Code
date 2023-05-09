@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Sugerir distribucion</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>TOP Distribuciones Linux</h1>
+      <a href="index.html" target="_self">Homepage</a>
+      <a href="https://es.wikipedia.org/wiki/GNU/Linux" target="_blank"
+        >Sobre Linux</a
+      >
+      <a href="sugerir.html" target="_self">Sugerir distro</a>
+      <a href="nosotros.html">Nosotros</a>
+    </header>
+    <hr />
+    <section>
+      <h2>Sugiera una distribucion</h2>
+      <form action="">
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Joaquin"
+          required
+        />
+        <label for="apellido">Apellido</label>
+        <input
+          type="text"
+          id="apellido"
+          name="apellido"
+          placeholder="Corradi"
+        />
+        <br />
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" name="edad" placeholder="21" />
+        <label for="dni">DNI</label>
+        <input
+          type="number"
+          id="dni"
+          name="dni"
+          placeholder="45.123.456"
+          required
+        />
+        <br />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="me@me.com" />
+        <br />
+        Femenino
+        <input type="radio" id="sexo" name="sexo" value="femenino" /> Masculino
+        <input type="radio" id="sexo" name="sexo" value="masculino" />
+        <br />
+        <label for="idioma">Idioma</label>
+        <br />
+        Espanol<input
+          type="checkbox"
+          id="idioma"
+          name="idioma"
+          value="espanol"
+        />
+        Ingles<input type="checkbox" id="idioma" name="idioma" value="ingles" />
+        Noruego<input
+          type="checkbox"
+          id="idioma"
+          name="idioma"
+          value="noruego"
+        />
+        <br />
+        <textarea
+          id="comentario"
+          name="comentario"
+          placeholder="arch..."
+          rows="5"
+          cols="60"
+        ></textarea>
+        <br />
+        <button type="submit" id="enviar">Enviar</button>
+      </form>
+    </section>
+  </body>
+</html>
