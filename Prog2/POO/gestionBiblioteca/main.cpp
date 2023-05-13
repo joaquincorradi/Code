@@ -4,7 +4,7 @@
 #include <iostream>
 
 void menu(int *pOpcionElegidaMenu);
-void primeraOpcion(usuario *Usuario[5], int *&pContadorPrimeraOpcion);
+void primeraOpcion(usuario *Usuario[5], int *pContadorPrimeraOpcion);
 void segundaOpcion(libro *Libro[5], usuario *Usuario[5],
                    int *pOpcionElegidaSegundaOpcion, bool *pValorSegundaOpcion,
                    int *pOpcionElegidaSegundaOpcionB);
@@ -37,8 +37,8 @@ int main() {
   bool valorSegundaOpcion;
   bool *pValorSegundaOpcion = &valorSegundaOpcion;
 
-  segundaOpcion(&Libro[5], &Usuario[5], &pOpcionElegidaSegundaOpcion,
-                &valorSegundaOpcion, &pOpcionElegidaSegundaOpcionB);
+  segundaOpcion(*Libro, *Usuario, *pOpcionElegidaSegundaOpcion,
+                *pValorSegundaOpcion, *pOpcionElegidaSegundaOpcionB);
 
   for (int i = 0; i < 5; ++i) {
     delete Usuario[i];
@@ -60,7 +60,7 @@ void menu(int *pOpcionElegidaMenu) {
   std::cin >> *pOpcionElegidaMenu;
 }
 
-void primeraOpcion(usuario *Usuario[5], int *&pContadorPrimeraOpcion) {
+void primeraOpcion(usuario *Usuario[5], int *pContadorPrimeraOpcion) {
   if (*pContadorPrimeraOpcion < 5) {
     Usuario[*pContadorPrimeraOpcion]->agregarNuevoUsuario();
     ++*pContadorPrimeraOpcion;

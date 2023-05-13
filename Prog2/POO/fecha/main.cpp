@@ -5,7 +5,15 @@ int main() {
   fecha *Fecha;
   Fecha = new fecha(1, 1, 1900);
 
-  std::cout <<
+  std::cout << "La fecha es: " << Fecha->getDia() << "/" << Fecha->getMes()
+            << "/" << Fecha->getAno() << '\n';
+  ++*Fecha;
+  std::cout << "La fecha es: " << Fecha->getDia() << "/" << Fecha->getMes()
+            << "/" << Fecha->getAno() << '\n';
+  *Fecha + 2;
 
-      delete Fecha;
+  std::cout << "La fecha es: " << Fecha->getDia() << "/" << Fecha->getMes()
+            << "/" << Fecha->getAno() << '\n';
+
+  delete Fecha;
 }
