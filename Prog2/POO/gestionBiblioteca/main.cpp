@@ -37,8 +37,8 @@ int main() {
   bool valorSegundaOpcion;
   bool *pValorSegundaOpcion = &valorSegundaOpcion;
 
-  segundaOpcion(*Libro, *Usuario, *pOpcionElegidaSegundaOpcion,
-                *pValorSegundaOpcion, *pOpcionElegidaSegundaOpcionB);
+  segundaOpcion(Libro, Usuario, pOpcionElegidaSegundaOpcion,
+                pValorSegundaOpcion, pOpcionElegidaSegundaOpcionB);
 
   for (int i = 0; i < 5; ++i) {
     delete Usuario[i];
