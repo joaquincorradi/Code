@@ -16,6 +16,7 @@ public:
   void setM(float _m);
 
   void sumarNumeros();
+  void imprimirClase1();
 };
 
 #endif // !_CLASE1H_
