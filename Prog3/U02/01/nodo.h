@@ -4,16 +4,26 @@
 template <class T> class Nodo {
 private:
   T dato;
-  Nodo<T> *siguiente;
+  Nodo<T> *siguiente; // no entiendo esta linea
 
 public:
-  T getDato() { return dato; }
+  Nodo();
 
-  void setDato(T d) { dato = d; }
+  void setDato(T _dato);
+  T getDato();
 
-  Nodo<T> *getSiguiente() { return siguiente; }
-
-  void setSiguiente(Nodo<T> *siguiente) { this->siguiente = siguiente; }
+  void setSiguiente(Nodo<T> *_siguiente);
+  Nodo<T> *getSiguiente();
 };
 
-#endif
+template <class T> Nodo<T>::Nodo() {}
+
+template <class T> Nodo<T> *Nodo<T>::getSiguiente() { return siguiente; }
+
+template <class T> void Nodo<T>::setSiguiente(Nodo<T> *_siguiente) { siguiente = _siguiente; }
+
+template <class T> T Nodo<T>::getDato() { return dato; }
+
+template <class T> void Nodo<T>::setDato(T _dato) { dato = _dato; }
+
+#endif // NODO_H
