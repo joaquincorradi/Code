@@ -2,7 +2,10 @@
 
 int ackerman(int, int);
 
-int main() {}
+int main() {
+  int ack = ackerman(3, 2);
+  std::cout << ack;
+}
 
 int ackerman(int m, int n) {
   if (m == 0) {

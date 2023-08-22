@@ -7,7 +7,7 @@ void imprimirNumero(int);
 int main() {
   std::cout << cociente(10, 3) << '\n';
   std::cout << resto(10, 3) << '\n';
-  imprimirNumero(103);
+  imprimirNumero(10245);
 }
 
 int cociente(int a, int b) {

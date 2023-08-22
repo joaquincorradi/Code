@@ -1,10 +1,12 @@
 #ifndef NODO_H
 #define NODO_H
 
-template <class T> class Nodo {
+template <class T>
+class Nodo
+{
 private:
   T dato;
-  Nodo<T> *siguiente; // no entiendo esta linea
+  Nodo<T> *siguiente;
 
 public:
   Nodo();
@@ -16,14 +18,26 @@ public:
   Nodo<T> *getSiguiente();
 };
 
-template <class T> Nodo<T>::Nodo() {}
+template <class T>
+Nodo<T>::Nodo() {}
 
-template <class T> Nodo<T> *Nodo<T>::getSiguiente() { return siguiente; }
+/* ~~ */
 
-template <class T> void Nodo<T>::setSiguiente(Nodo<T> *_siguiente) { siguiente = _siguiente; }
+template <class T>
+void Nodo<T>::setDato(T _dato) { dato = _dato; }
 
-template <class T> T Nodo<T>::getDato() { return dato; }
+template <class T>
+T Nodo<T>::getDato() { return dato; }
 
-template <class T> void Nodo<T>::setDato(T _dato) { dato = _dato; }
+/* ~~ */
+
+template <class T>
+void Nodo<T>::setSiguiente(Nodo<T> *_siguiente)
+{
+  siguiente = _siguiente;
+}
+
+template <class T>
+Nodo<T> *Nodo<T>::getSiguiente() { return siguiente; }
 
 #endif // NODO_H
