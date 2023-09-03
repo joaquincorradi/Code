@@ -5,7 +5,9 @@
 #include <iostream>
 #include <optional>
 
-template <class T> class Lista {
+template <class T>
+class Lista
+{
 private:
   Nodo<T> *inicio;
 
@@ -33,24 +35,32 @@ public:
   void imprimir();
 };
 
-template <class T> Lista<T>::Lista() { inicio = nullptr; }
+template <class T>
+Lista<T>::Lista() { inicio = nullptr; }
 
-template <class T> Lista<T>::~Lista() {
+template <class T>
+Lista<T>::~Lista()
+{
   vaciar();
   delete inicio;
 }
 
-template <class T> Lista<T>::Lista(const Lista<T> &li) { inicio = li.inicio; }
+template <class T>
+Lista<T>::Lista(const Lista<T> &li) { inicio = li.inicio; }
 
 /* ~~ */
 
-template <class T> bool Lista<T>::esVacia() { return inicio == nullptr; }
+template <class T>
+bool Lista<T>::esVacia() { return inicio == nullptr; }
 
-template <class T> int Lista<T>::getTamanio() {
+template <class T>
+int Lista<T>::getTamanio()
+{
   Nodo<T> *aux = inicio;
   int tam = 0;
 
-  while (aux != nullptr) {
+  while (aux != nullptr)
+  {
     tam++;
     aux = aux->getSiguiente();
   }
@@ -60,12 +70,15 @@ template <class T> int Lista<T>::getTamanio() {
 
 /* ~~ */
 
-template <class T> void Lista<T>::insertar(int posicion, T dato) {
+template <class T>
+void Lista<T>::insertar(int posicion, T dato)
+{
 
   Nodo<T> *nuevo = new Nodo<T>;
   nuevo->setDato(dato);
 
-  if (posicion == 0) {
+  if (posicion == 0)
+  {
     nuevo->setSiguiente(inicio);
     inicio = nuevo;
     return;
@@ -74,12 +87,14 @@ template <class T> void Lista<T>::insertar(int posicion, T dato) {
   Nodo<T> *aux = inicio;
   int posicionActual = 0;
 
-  while ((aux != nullptr) && (posicionActual != posicion - 1)) {
+  while ((aux != nullptr) && (posicionActual != posicion - 1))
+  {
     aux = aux->getSiguiente();
     posicionActual++;
   }
 
-  if (aux == nullptr) {
+  if (aux == nullptr)
+  {
     throw 400;
   }
 
@@ -87,7 +102,9 @@ template <class T> void Lista<T>::insertar(int posicion, T dato) {
   aux->setSiguiente(nuevo);
 }
 
-template <class T> void Lista<T>::insertarPrimero(T dato) {
+template <class T>
+void Lista<T>::insertarPrimero(T dato)
+{
 
   Nodo<T> *nuevo = new Nodo<T>;
   nuevo->setDato(dato);
@@ -95,19 +112,23 @@ template <class T> void Lista<T>::insertarPrimero(T dato) {
   inicio = nuevo;
 }
 
-template <class T> void Lista<T>::insertarUltimo(T dato) {
+template <class T>
+void Lista<T>::insertarUltimo(T dato)
+{
 
   Nodo<T> *nuevo = new Nodo<T>;
   nuevo->setDato(dato);
   Nodo<T> *aux = inicio;
 
-  if (aux == nullptr) {
+  if (aux == nullptr)
+  {
     nuevo->setSiguiente(nullptr);
     inicio = nuevo;
     return;
   }
 
-  while (aux->getSiguiente() != nullptr) {
+  while (aux->getSiguiente() != nullptr)
+  {
     aux = aux->getSiguiente();
   }
 
@@ -117,22 +138,27 @@ template <class T> void Lista<T>::insertarUltimo(T dato) {
 
 /* ~~ */
 
-template <class T> void Lista<T>::eliminar(int posicion) {
+template <class T>
+void Lista<T>::eliminar(int posicion)
+{
   Nodo<T> *aux = inicio, *aBorrar;
   int posicionActual = 0;
 
-  if (posicion == 0) {
+  if (posicion == 0)
+  {
     inicio = inicio->getSiguiente();
     delete aux;
     return;
   }
 
-  while ((aux != nullptr) && (posicionActual != posicion - 1)) {
+  while ((aux != nullptr) && (posicionActual != posicion - 1))
+  {
     aux = aux->getSiguiente();
     posicionActual++;
   }
 
-  if (aux == nullptr) {
+  if (aux == nullptr)
+  {
     throw 400;
   }
 
@@ -142,27 +168,34 @@ template <class T> void Lista<T>::eliminar(int posicion) {
   delete aBorrar;
 }
 
-template <class T> void Lista<T>::reemplazar(int posicion, T dato) {
+template <class T>
+void Lista<T>::reemplazar(int posicion, T dato)
+{
 
   Nodo<T> *aux = inicio;
   int posicionActual = 0;
 
-  while ((aux != nullptr) && (posicionActual != posicion)) {
+  while ((aux != nullptr) && (posicionActual != posicion))
+  {
     aux = aux->getSiguiente();
     posicionActual++;
   }
 
-  if (aux == nullptr) {
+  if (aux == nullptr)
+  {
     throw 400;
   }
 
   aux->setDato(dato);
 }
 
-template <class T> void Lista<T>::vaciar() {
+template <class T>
+void Lista<T>::vaciar()
+{
   Nodo<T> *aux = inicio, *aBorrar;
 
-  while (aux != nullptr) {
+  while (aux != nullptr)
+  {
     aBorrar = aux;
     aux = aux->getSiguiente();
     delete aBorrar;
@@ -171,35 +204,24 @@ template <class T> void Lista<T>::vaciar() {
   inicio = nullptr;
 }
 
-template <class T> T Lista<T>::getDato(int posicion) {
+/* ~~ */
 
-  Nodo<T> *aux = inicio;
-  int posicionActual = 0;
-
-  while ((aux != nullptr) && (posicionActual != posicion)) {
-    aux = aux->getSiguiente();
-    posicionActual++;
-  }
-
-  if (aux == nullptr) {
-    throw 400;
-  }
-
-  return aux->getDato();
-}
-
-template <class T> void Lista<T>::fnInvierte() {
+template <class T>
+void Lista<T>::fnInvierte()
+{
 
   Nodo<T> *anterior = nullptr, *aux = inicio, *siguiente = inicio;
   /*aux es anterior, aux1 es auxSiguiente y aux2 es auxiliar*/
 
-  if (inicio == nullptr) {
+  if (inicio == nullptr)
+  {
     return;
   }
 
   siguiente = siguiente->getSiguiente();
 
-  while (siguiente) {
+  while (siguiente)
+  {
     aux->setSiguiente(anterior);
     anterior = aux;
     aux = siguiente;
@@ -209,21 +231,27 @@ template <class T> void Lista<T>::fnInvierte() {
   inicio = aux;
 }
 
-template <class T> void Lista<T>::insertAfter2(T oldValue, T newValue) {
+template <class T>
+void Lista<T>::insertAfter2(T oldValue, T newValue)
+{
   Nodo<T> *aux = inicio;
   int contOldValue = 0;
 
-  while (aux != nullptr) {
-    if (aux->getDato() == oldValue) {
+  while (aux != nullptr)
+  {
+    if (aux->getDato() == oldValue)
+    {
       ++contOldValue;
     }
-    if (contOldValue == 2) {
+    if (contOldValue == 2)
+    {
       break;
     }
     aux = aux->getSiguiente();
   }
 
-  if (aux == nullptr) {
+  if (aux == nullptr)
+  {
     throw 404;
   }
 
@@ -233,9 +261,37 @@ template <class T> void Lista<T>::insertAfter2(T oldValue, T newValue) {
   aux->setSiguiente(nuevo);
 }
 
-template <class T> void Lista<T>::imprimir() {
+/* ~~ */
+
+template <class T>
+T Lista<T>::getDato(int posicion)
+{
+
   Nodo<T> *aux = inicio;
-  while (aux != nullptr) {
+  int posicionActual = 0;
+
+  while ((aux != nullptr) && (posicionActual != posicion))
+  {
+    aux = aux->getSiguiente();
+    posicionActual++;
+  }
+
+  if (aux == nullptr)
+  {
+    throw 400;
+  }
+
+  return aux->getDato();
+}
+
+/* ~~ */
+
+template <class T>
+void Lista<T>::imprimir()
+{
+  Nodo<T> *aux = inicio;
+  while (aux != nullptr)
+  {
     std::cout << aux->getDato() << "->";
     aux = aux->getSiguiente();
   }
