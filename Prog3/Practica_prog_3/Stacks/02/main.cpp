@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stack>
 
-bool sonIguales(std::stack<char> pila1, std::stack<char> pila2);
+bool sonIguales(std::stack<char>, std::stack<char>);
 
 int main() {
   std::stack<char> pila1, pila2;

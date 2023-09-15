@@ -2,7 +2,7 @@
 #include <stack>
 #include <string>
 
-bool estaBalanceada(std::string funcion);
+bool estaBalanceada(std::string);
 
 int main() {
   std::string funcion;
@@ -33,10 +33,12 @@ bool estaBalanceada(std::string funcion) {
         return false;
       }
 
-      if (pila.top() != funcion[i]) {
-        return false;
-      } else {
+      if ((pila.top() == '(' && funcion[i] == ')') ||
+          (pila.top() == '[' && funcion[i] == ']') ||
+          (pila.top() == '{' && funcion[i] == '}')) {
         pila.pop();
+      } else {
+        return false;
       }
     }
   }

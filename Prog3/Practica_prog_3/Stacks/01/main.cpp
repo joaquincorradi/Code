@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stack>
 
-void imprimirInvertido(std::stack<char> palabra);
+void imprimirInvertido(std::stack<char>);
 
 int main() {
   std::stack<char> palabra;
