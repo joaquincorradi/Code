@@ -1,0 +1,9 @@
+// Cambio de estado del sensor con HTTP PUT
+PUT /sensor/1
+{
+  "estado": 1
+}
+
+// Opcion 2 
+// /sensor/1/pausar
+// /sensor/1/activar

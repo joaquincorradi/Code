@@ -1,0 +1,4 @@
+Una aerolineas quiere tener una vista geolocalizada de sus vuelos tanto en tiempo real como de sus vuelos historicos. Lo que sabemos es que los aviones tienen la capacidad de informar cada 5 minutos su ubicación mediante una URL configurable.
+
+
+Clases: avión, vuelo, trazo, aeropuerto, ruta

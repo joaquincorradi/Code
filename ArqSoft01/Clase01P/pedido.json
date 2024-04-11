@@ -1,0 +1,45 @@
+{
+  "id": "8734250974",
+  "total-price": 100000,
+  "currency": "ARS",
+  "payment-method": {
+    "type": "debit-card"
+  },
+  "shipping": {
+    "method": "",
+    "carrier": "Andreani",
+    "carrier-id": "923876452"
+  },
+  "seller-id": "2903745298",
+  "seller-address": {
+    "city": {
+      "id": "TUwhQnJvkYSwG9iYQ0",
+      "name": "Cordoba"
+    },
+    "state": {
+      "id": "AR-X",
+      "name": "Cordoba"
+    },
+    "country": {
+      "id": "AR",
+      "name": "Argentina"
+    },
+    "zip": "5000"
+  },
+  "buyer-id": "7843019340",
+  "buyer-address": {
+    "city": {
+      "id": "TUwhQnJvkYSwG9iYQ0",
+      "name": "Cordoba"
+    },
+    "state": {
+      "id": "AR-X",
+      "name": "Cordoba"
+    },
+    "country": {
+      "id": "AR",
+      "name": "Argentina"
+    },
+    "zip": "5000"
+  }
+}
