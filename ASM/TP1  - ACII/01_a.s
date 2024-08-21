@@ -1,0 +1,3 @@
+ADD X0, X1, X2
+ADD X0, X0, X3,
+ADD X0, X0, X4

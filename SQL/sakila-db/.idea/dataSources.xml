@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="sakila@localhost" uuid="e078d7a1-5d6c-4a89-88eb-3dac6476b064">
+    <data-source source="LOCAL" name="Sakila macOS" uuid="e078d7a1-5d6c-4a89-88eb-3dac6476b064">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/sakila</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="uccarqsoft@localhost" uuid="7a237bfe-f983-40ca-9f69-b4a761ab1c4c">
+    <data-source source="LOCAL" name="Parcial 1" uuid="ff09065e-6448-40db-9829-ccb3fd0ed19f">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/uccarqsoft</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/parcial01</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="courses_platform_proj" uuid="f83a75b0-47f3-450b-a368-42f4548eb6af">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/courses_platform_proj</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

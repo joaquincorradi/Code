@@ -1,0 +1,4 @@
+SUB X10, X2, X3
+LSL X9, X10, #3 
+ADD X9, X6, X9
+LDUR X11, [X9, #0]

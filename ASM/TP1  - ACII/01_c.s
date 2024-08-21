@@ -1,0 +1,2 @@
+ADD X0, X1, X2
+SUB X3, X0, X0

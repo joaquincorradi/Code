@@ -93,3 +93,33 @@ FROM customer
 INNER JOIN address ON customer.address_id = address.address_id
 WHERE address.district != 'California'
 ORDER BY address.district ASC;
+
+-- Ejercicio 11
+
+-- Ejercicio 12
+SELECT title,
+       replacement_cost
+FROM film
+WHERE replacement_cost > (
+    SELECT AVG(replacement_cost)
+    FROM film
+    );
+
+-- Ejercicio 13
+
+-- Ejercicio 14
+SELECT title,
+       language.name AS idioma
+FROM film
+INNER JOIN language ON film.language_id = language.language_id
+WHERE language.name NOT IN ('English');
+
+-- Ejercicio 15
+SELECT film.title AS titulo,
+       category.name AS categoria
+FROM film
+INNER JOIN film_category ON film.film_id = film_category.film_id
+INNER JOIN category ON film_category.category_id = category.category_id
+WHERE category.name NOT IN ('Action', 'Drama');
+
+-- Ejercicio 16
