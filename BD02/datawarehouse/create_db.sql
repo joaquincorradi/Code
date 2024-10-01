@@ -45,8 +45,6 @@ CREATE TABLE sucursal(
 CREATE TABLE producto (
     id_producto BIGINT,
     id_sucursal INT,
-    id_comercio INT,
-    id_bandera INT,
     productos_ean INT,
     productos_descripcion VARCHAR(300),
     productos_cantidad_presentacion DECIMAL(4,3),
@@ -61,6 +59,5 @@ CREATE TABLE producto (
     productos_precio_unitario_promo2 DECIMAL(10,2),
     productos_leyenda_promo2 VARCHAR(100),
     PRIMARY KEY (id_producto, id_sucursal),
-    FOREIGN KEY (id_comercio, id_bandera) REFERENCES comercio(id_comercio, id_bandera),
     FOREIGN KEY (id_sucursal) REFERENCES sucursal(id_sucursal)
 );
